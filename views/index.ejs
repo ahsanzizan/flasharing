@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Recent File Link:</h2>
+        <% if (locals.link != null) { %> 
+            <div>
+                <a href="<%= locals.link %> "><%= locals.link %></a>
+            </div>
+        <% } else { %> 
+            <div>
+                <h4>No recent file</h4>
+            </div>
+        <% } %> 
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file">File:</label>
+            <input type="file" id="file" name="file" required>
+    
+            <label for="password">Set Password</label>
+            <input type="password" id="password" name="password">
+    
+            <button type="submit">
+                Share File
+            </button>
+        </form>
+    </div>
+</body>
+</html>

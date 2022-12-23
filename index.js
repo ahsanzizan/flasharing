@@ -9,6 +9,7 @@ const app = express()
 const upload = multer({ dest: 'uploads'})
 mongoose.connect(process.env.DB_URL)
 
+app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded({extended: true}))
 app.set('view engine', 'ejs')
 

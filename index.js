@@ -13,12 +13,12 @@ app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded({extended: true}))
 app.set('view engine', 'ejs')
 
-// localhost:3000/
+// PORT/
 app.get('/', (req, res) => {
     res.render('index')
 })
 
-// localhost:3000/upload
+// PORT/upload
 app.post('/upload', upload.single('file'), async (req, res) => {
     const data = {
         path: req.file.path,
@@ -33,7 +33,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
     res.render('index', { link: `${req.headers.origin}/file/${file.id}`})
 })
 
-// To download the file localhost:3000/file/:id
+// To download the file PORT/file/:id
 app.get('/file/:id', async (req, res) => {
     const file = await File.findById(req.params.id)
 
@@ -53,7 +53,6 @@ app.get('/file/:id', async (req, res) => {
     await file.save()
     res.download(file.path, file.originalName)
 })
-app.route('/file/:id').get(download).post(download)
 
 async function download(req, res) {
     const file = await File.findById(req.params.id)
@@ -74,5 +73,7 @@ async function download(req, res) {
     await file.save()
     res.download(file.path, file.originalName)
 }
+
+app.route('/file/:id').get(download).post(download)
 
 app.listen(process.env.PORT)

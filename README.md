@@ -11,3 +11,7 @@ npm start
 
 download and install npm :
 https://nodejs.org/
+
+
+download and install mongodb:
+https://www.mongodb.com/docs/manual/installation/

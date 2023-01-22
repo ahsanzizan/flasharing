@@ -15,3 +15,7 @@ https://nodejs.org/
 
 download and install mongodb:
 https://www.mongodb.com/docs/manual/installation/
+
+
+![home preview](/home_preview.png "Home Preview")
+![download file preview](/password_preview.png "download preview")

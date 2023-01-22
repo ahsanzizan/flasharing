@@ -1,0 +1,11 @@
+<html>
+	<head>
+		<title>Document</title>
+	</head>
+	<body font="arial">
+		<h2>Log out</h2>
+		<p>Lorem ipsum dolor sit amet reac consectur</p>
+		<a href="https://ahsanAazizan.github.io/card">Add Bookmark</a>
+		<a href="#" style="margin-left: 300px">Log Out</a>
+	</body>
+</html>
